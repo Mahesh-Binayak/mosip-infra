@@ -9,6 +9,19 @@ Loads certs for default partners for sandbox. Refer [mosip-onboarding repo](http
 ```
 ./install.sh
 ```
+
+
+### Configurational steps after onboarding is completed.
+*  Below mentioned onboarding steps are added after 1.2.0.1-b3
+    *  Onboarding the default mimoto-keybinding partner
+
+
+###1. Onboarding the default  mimoto-keybinding partner
+*  After successfull partner onboarder run for  mimoto keybinding partner , download html reports from `onboarder` bucket of object store .
+*  Get `apiKey` from  response body of  request `request-for-partner-apikey` from the report **_mimoto-keybinding.html_**
+*  Update & commit  value of  `wallet.binding.partner.api.key`  parameter with `apiKey` value from last step in **mimoto-default.properties** .
+*  Restart mimoto pod.
+
 # Troubleshootings
 
 * After completion of the job, a very detailed `html report` is prepared and stored at https://onboarder.{sandbox_base_url}.mosip.net
